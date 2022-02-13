@@ -19,192 +19,154 @@
     .attribution a {
       color:hsl(0, 0%, 100%);
     text-decoration: none; }
-    body{
-      background-color: hsl(233, 47%, 7%);
-      
-    }
+
     *{
-      box-sizing: border-box;
+        box-sizing: border-box;
     }
-    
-    .kartu{
-      height: 400px;
-      padding: 40px;
-      width: 80%;
-      background-color: hsl(244, 38%, 16%);
-      border-radius: 10px;
-      margin: 10% auto;
-      
-      position: relative;
+    body{
+        width: 100%;
+        margin: 0;
+        padding:0;
+        background-color: hsl(233, 47%, 7%);
+        display: flex;
+        height: 100vh;
+        justify-content: center;
     }
-    .kartu::after{
-      content: '';
-      position: absolute;
-      background-image: url(images/image-header-desktop.jpg);
-      background-color: hsl(277, 64%, 61%);
-      background-blend-mode:multiply;
-      background-size: cover 50%;
-      background-repeat: no-repeat;
-      background-position: right;
-      display: block;
-      left: 50%;
-      right: 0;
-      top:0;
-      bottom: 0;
-      border-radius: 0px 10px 10px 0px;
+    .card-box{
+        width:80%;
+        border-radius: 10px;
+        background-color: hsl(244, 38%, 16%);
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 'a  b';
+        margin: auto;
+    }
+    .image  {
+        background-image: url('images/image-header-desktop.jpg');
+        background-size: cover;
+        position: relative;
+
+    }
+    .image::after{
+        content: '';
+        background-color:  hsl(277, 64%, 61%);
+        mix-blend-mode:multiply;
+        left: 0;
+        right: 0;
+        top:0;
+        bottom: 0;
+        position: absolute;
+
+    }
+    img{
+        display: none;
+    }
+    .content{
+        grid-area: a;
+        margin: 5% 10%;
     }
     h1{
-      font-family: "Lexend Deca", sans-serif;
-      color: hsl(0, 0%, 100%);
-      font-size: 35px;
-      margin-top: 10px;
-    }
-    p {
-      font-family: 'inter', sans-serif;
-      font-size: 15px;
-      text-align: start;
-      width: 90%;
-      margin-bottom: 50px;
-      font-weight: 400;
-    }
-    p{
-      color:  hsla(0, 0%, 100%, 0.75);
-    }
-    span{
-      color: hsl(277, 64%, 61%);
-    }
-
-
-    .container{
-      width: 40%;
-      height: 300px;
-      margin: 0px;
-    }
-
-    .items{
-        width: 80%;
-        margin: 50px auto;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        
-    }
-    .item1{
-        display: flex;        
-        align-items:center;
-        color: hsl(0, 0%, 100%);
-        font-family: 'Lexend Deca', sans-serif;
+        font-family: 'inter', sans-serif;
         font-weight: 700;
-        
+        color: hsl(0, 0%, 100%);
+        font-size: 45px;
     }
-    .item2{
-        display: flex;        
-        align-items:center;
-        color: hsla(0, 0%, 100%, 0.6);
-        font-family: 'Lexend Deca', sans-serif;
-        font-size: 10px;
-        
-    }
-    @media only screen and (max-width: 375px) {
-      .kartu{
-        padding: 5px ;
-        justify-content: center;
-        align-content: center;
-        height: 600px;
-        border-radius: 7px;
-        
-      }
-      .kartu::after{
-        background-image: url(images/image-header-mobile.jpg);
-        background-position-y: center;
-        background-size: cover;
-        left: 0;
-        bottom: 75%;
-        border-radius: 10px 10px 0px 0px;
-        background-blend-mode:multiply;
-      }
-      h1{
-        font-size: 20px;
-        margin: 80% auto 10% auto;
-        text-align: center;
-        
-        width: 200px;
-        margin-right: 10%;
-      }
-      p{
-        text-align: center;
-        font-size: 10px;
-        margin: 15% auto;
-        line-height: 20px;
-      }
-      .container{
-      width: 100%;
-      height: 300px;
+    .title span{
+        color: hsl(277, 64%, 61%);
+    }        
+    p{
+        color: hsla(0, 0%, 100%, 0.75);
+        font-size: 15px;
+        font-family: 'inter', sans-serif;
+        letter-spacing: 2px; 
     }
     .items{
-      grid-template-columns: 1fr;
-      grid-template-areas: 'a' 'b' 'c' 'd' 'e' 'f';
-      justify-items: center;
-      
-    }
-    .item1{
-      font-size: 20px;
+        display: flex;
     }
     .item2{
-      padding-bottom: 15%;
-      padding-top: 5%;
+        padding-right:15%;
+        margin-top: 10%;
+        margin-bottom:5% ;
+        color:hsla(0, 0%, 100%, 0.6);
+        font-weight: 400;
+        font-family: 'Lexend Deca', sans-serif;
+        font-size: 15px;
     }
-    .i1{
-      grid-area: a;
+    .item2 span{
+        font-size: 25px;
+        display: block;
+        font-weight: 700;
+        color: hsl(0, 0%, 100%);
+        padding:10% 0;
     }
-    .i4{
-      grid-area: b;
-    }
-    .i2{
-      grid-area: c;
-    }
-    .i5{
-      grid-area: d;
-    }
-    .i3{
-      grid-area: e;
-    }
-    .i6{
-      grid-area: f;
-    }
-    .attribution{
-      padding-bottom: 0;
-    }
-  }
-
-  </style>
-</head>
-<body>
-  <div class="kartu">
-    <div class="container">
-      <header>
-        <h1>Get <span>insights</span> that help your business grow.</h1>
-      </header>
-      <div class="tulisan">
-        <p>Discover the benefits of data analytics and make better decisions regarding revenue, customer experience, and overall efficiency.</p>
-      </div>
-      <class class="items" >
-        <div class="item1 i1">10k</div>
-        <div class="item1 i2">314</div>
-        <div class="item1 i3">12M+</div>
-        <div class="item2 i4">COMPANIES</div>
-        <div class="item2 i5">TEMPLATE</div>
-        <div class="item2 i6">QUERIES</div>
-        
-      </class>
-      
-    </div>
     
-  </div>
-  
+    @media only screen and (max-width: 375px) {
+        .card-box{
+            
+            display: grid;
+            height: auto;
+            grid-template-columns: 1fr;
+            grid-template-rows: 200px auto  ;
+            grid-template-areas: 'a' 'b';
+        }
+        .image{
+            background-image: url('images/image-header-mobile.jpg');
+            grid-area: a;
+            overflow: hidden;
+            background-size: cover;
+        }
+        img{
+            display: block;
+            width: 100%;
+        }
+        .content{
+            grid-area: b;
+            margin:5%;
+            text-align: center;
+        }
+        h1{
+            font-size: 30px;
+        }
+        p{
+            font-size: 12px;
+            line-height: 25px;
+        }
+        .items{
+          flex-direction: column;
+          margin-bottom: 25px;
+          
 
-  <!-- <div class="attribution"> -->
-    <!-- Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.  -->
-    <!-- Coded by <a href="#">SIERRA_ARA</a>. -->
-  <!-- </div> -->
+        }
+        .item2{
+            padding-right:0;
+        margin-top: 2px;
+        margin-bottom:0px ;
+        
+        }
+        .item2 span {
+            padding-bottom: 10px;
+        }
+        
+    }
+   </style>
+</head>    
+<body>
+    <div class="card-box">
+        <div class="content">
+            <div class="title"><h1>Get <span>insights</span> that help your business grow.</h1>
+            </div>
+            <div class="par"><p>Discover the benefits of data analytics and make better decisions regarding revenue, customer experience, and overall efficiency.</p>
+            </div>
+            <div class="items">
+                <div class="item2 i4"><span>10k+</span> COMPANIES</div>
+                <div class="item2 i5"><span>314</span> TEMPLATE</div>
+                <div class="item2 i6"><span>12M+</span> QUERIES</div>
+            </div>
+        </div>
+        <div class="image">
+            
+        </div>
+    </div>
 </body>
 </html>
